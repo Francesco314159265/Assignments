@@ -1,0 +1,42 @@
+// This is the input file which descrbes the graph. 
+// Each node is uniquely identified with it's index (the indices must be in order , altough is fairly easy
+// to adjust for that, just use sort with custom function which sort Nodes based on their index)
+
+// Indices must span the range [0 , Number_Nodes - 1] , so the list:
+// {
+//     node : 0,
+//     node : 1,
+//     node : 2
+// }
+// is ok, while the list:
+// {
+//     node: 0,
+//     node: 2,
+//     node: 3
+// }
+// is not.
+// On each row, the first column is the index of the node, while the following integers
+// will be the nodes that have a connection ENTERING in the give node, so the row:
+// {
+//     2 , 1 , 4 , 6
+// }
+// says that node at index 2, is connected to node 1 , node 4 and node 6 (not necessarely just them),
+// and node 1 has a connection which goes from itself to node 2, as well as node 4 and node 6.
+// I said not necessarely because, if for example in the description of node 5 we find
+// {
+//     5 , 2
+// }
+// then we will know that node 2 connects also to node 5, even if 5 was not present in the list of 2.
+// This is beacuse, as said before, to each node it's only required the list of node which connects 
+// from themself to the currently described node. Connection which will go out from the current node
+// will be stated, if presents, in the other nodes.
+
+0 , 1    
+1 , 
+2 , 
+3 , 4
+4 , 3 , 6 
+5 , 4 , 7
+6 , 0 , 4 
+7 , 6 
+8 , 6
